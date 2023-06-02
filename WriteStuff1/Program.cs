@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using System.Collections.Generic;
 
 namespace WriteStuff1
 {
@@ -6,7 +8,14 @@ namespace WriteStuff1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            Queue<string> strings = new Queue<string>();
+            string phrase = "start";
+
+            while (phrase != null)
+            {
+                phrase = Console.ReadLine();
+                strings.Enqueue(phrase);
+            }
         }
     }
 }
