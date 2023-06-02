@@ -8,13 +8,13 @@ namespace TheyCameBefore
     public static class BeforeUtils
     {
         public static IEnumerable<T> GetTheOnesBefore<T>
-        (IEnumerable<T> items, T item) where T : IComparable<T>
+        (IEnumerable<T> items, T item) where T : struct, IComparable<T>
         {
             var itemsCheck = items.ToList();
             
-            foreach (object i in items)
+            foreach (T i in items)
             {
-                if (i > item) itemsCheck.Remove(i);
+                if (i.CompareTo(item) > 0) itemsCheck.Remove(i);
             }
 
             return itemsCheck;
