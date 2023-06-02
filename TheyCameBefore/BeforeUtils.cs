@@ -7,9 +7,17 @@ namespace TheyCameBefore
 {
     public static class BeforeUtils
     {
-        public static IEnumerable<T> GetTheOnesBefore<T>() where T : IComparable<T>
+        public static IEnumerable<T> GetTheOnesBefore<T>
+        (IEnumerable<T> items, T item) where T : IComparable<T>
         {
+            var itemsCheck = items.ToList();
             
+            foreach (object i in items)
+            {
+                if (i > item) itemsCheck.Remove(i);
+            }
+
+            return itemsCheck;
         }
     }
 }
