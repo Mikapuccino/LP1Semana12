@@ -31,5 +31,16 @@ namespace MyEnumerable
             if (i == 2) t3 = item;
             if ((i < 0) || (i > 2)) throw new IndexOutOfRangeException();
         }
+
+        public IEnumerator<T> GetEnumerator()
+        {
+            for (int i = 0; i < 2; i++)
+                yield return i;
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
     }
 }
