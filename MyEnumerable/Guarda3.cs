@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace MyEnumerable
 {
-    public class Guarda3<T>
+    public class Guarda3<T> : IEnumerable<T>
     {
         private T t1, t2, t3;
 
