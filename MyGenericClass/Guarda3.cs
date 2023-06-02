@@ -21,7 +21,7 @@ namespace MyGenericClass
             if (i == 0) return t1;
             if (i == 1) return t2;
             if (i == 2) return t3;
-            if ((i < 0) || (i > 2)) throw new IndexOutOfRangeException();
+            else return default;
         }
 
         public void SetItem(int i, T item)
